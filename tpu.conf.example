@@ -1,8 +1,5 @@
 # Timely Pacman Updater configuration example
 
-# Update frequency: daily, weekly, or monthly
-UPDATE_FREQUENCY="weekly"
-
 # Log retention period in days
 LOG_RETENTION_DAYS=60
 

@@ -4,7 +4,7 @@ A lightweight Arch Linux system update automation script I made for my mother's 
 
 If you want some backstory: I bought an all-in-one computer off a guy on craigslist for about 20 dollars because it "ran too slow" and I installed the only Linux distro I know on it (Arch Linux, btw). It works like new, and I am now gifting this computer to my mom who needed a new PC. In an effort to make everything as fool proof for her as possible, I wrote this script to update her computer automatically.
 
-I'm putting it up here in case anyone else is unfortunate enough to be both technologically challanged and using Arch. I'm imagining my target audience is like 4 people in the entire world.
+I'm putting it up here in case anyone else is unfortunate enough to be both technologically challenged and using Arch. I'm imagining my target audience is like 4 people in the entire world.
 
 ---
 

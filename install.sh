@@ -59,7 +59,6 @@ echo "You chose log retention days: $LOG_RETENTION_DAYS"
 echo -e "\nWriting config to $CONFIG_DEST..."
 sudo tee "$CONFIG_DEST" >/dev/null <<EOF
 # Timely Pacman Updater configuration
-UPDATE_FREQUENCY="$UPDATE_FREQUENCY"
 LOG_RETENTION_DAYS=$LOG_RETENTION_DAYS
 LOG_DIR="$LOG_DIR"
 EOF

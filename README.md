@@ -82,7 +82,7 @@ sudo /usr/local/bin/tpu.sh
 ## Log Files
 
  - Logs are saved in `/var/log/tpu/` with filenames like `update-YYYMMDD-HHMMSS.log`.
- - Logs older than the retention period (`LOG_RETENTION_DAYS) are deleted automatically after each update.
+ - Logs older than the retention period (`LOG_RETENTION_DAYS`) are deleted automatically after each update.
  - Check these logs to troubleshoot any update issues.
 
 ---

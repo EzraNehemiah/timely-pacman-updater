@@ -8,23 +8,24 @@ LOG_DIR="/var/log/tpu"
 SERVICE_NAME="timely-pacman-updater"
 SYSTEMD_DIR="/etc/systemd/system"
 
+# Global variables to hold user inputs
+UPDATE_FREQUENCY=""
+LOG_RETENTION_DAYS=""
+
 # Prompt for update frequency
 prompt_update_frequency() {
-    local default="weekly"
+    local choice default="weekly"
     echo -e "\e[1mChoose update frequency:\e[0m"
     echo "   1) daily"
     echo " > 2) weekly"
     echo "   3) monthly"
     while true; do
         read -rp "(1-3): " choice
-        if [[ -z "$choice" ]]; then
-            echo "$default"
-            return
-        fi
         case "$choice" in
-            1) echo "daily"; return ;;
-            2) echo "weekly"; return ;;
-            3) echo "monthly"; return ;;
+            "") UPDATE_FREQUENCY="$default"; return ;;
+            1) UPDATE_FREQUENCY="daily"; return ;;
+            2) UPDATE_FREQUENCY="weekly"; return ;;
+            3) UPDATE_FREQUENCY="monthly"; return ;;
             *) echo "Invalid choice. Select a number between 1 and 3." ;;
         esac
     done
@@ -32,14 +33,14 @@ prompt_update_frequency() {
 
 # Prompt for log retention days
 prompt_log_retention() {
-    local default=60
+    local days default=60
     while true; do
         read -rp "Enter log retention time in days (default: $default): " days
         if [[ -z "$days" ]]; then
-            echo "$default"
+            LOG_RETENTION_DAYS="$default"
             return
         elif [[ "$days" =~ ^[1-9][0-9]*$ ]]; then
-            echo "$days"
+            LOG_RETENTION_DAYS="$days"
             return
         else
             echo "Please enter a positive integer."
@@ -49,8 +50,9 @@ prompt_log_retention() {
 
 echo -e "\n=== Timely Pacman Updater Installation ===\n"
 
-UPDATE_FREQUENCY=$(prompt_update_frequency)
-LOG_RETENTION_DAYS=$(prompt_log_retention)
+# Collect user input
+prompt_update_frequency
+prompt_log_retention
 
 echo -e "\nYou chose update frequency: $UPDATE_FREQUENCY"
 echo "You chose log retention days: $LOG_RETENTION_DAYS"

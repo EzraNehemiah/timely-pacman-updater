@@ -1,6 +1,6 @@
 # Timely Pacman Updater
 
-A lightweight Arch Linux system update automation script I made for my mother's pc. It runs via systemd timers. It updates your system (`pacman -Syu`), logs the output, and cleans up old logs automatically.
+A lightweight Arch Linux system update automation script I made for my mother's pc. It runs via systemd timers. It updates your system (`pacman -Syu`), logs the output and cleans up old logs automatically.
 
 If you want some backstory: I bought an all-in-one computer off a guy on craigslist for about 20 dollars because it "ran too slow" and I installed the only Linux distro I know on it (Arch Linux, btw). It works like new, and I am now gifting this computer to my mom who needed a new PC. In an effort to make everything as fool proof for her as possible, I wrote this script to update her computer automatically.
 

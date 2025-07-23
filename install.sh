@@ -120,7 +120,7 @@ echo "If you want to automate this step, choose 'y'. Otherwise, choose 'N' to sk
 
 read -rp "Add sudoers rule for passwordless pacman updates? (y/N): " add_sudoers
 
-if [[ "$add_sudoers" =~ [Yy] ]]; then
+if [[ "$add_sudoers" == [Yy] ]]; then
     SUDOERS_FILE="/etc/sudoers.d/timely-pacman-updater"
     SUDOERS_RULE="$USER ALL=(ALL) NOPASSWD: /usr/bin/pacman -Syu --noconfirm"
     
